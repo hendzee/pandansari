@@ -25,7 +25,7 @@ http://www.tooplate.com/view/2081-solution
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 		<!-- google font -->
 		<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
 		<!-- custom -->
 		<link rel="stylesheet" href="css/style.css">
 		<!--slick theme-->
@@ -50,11 +50,11 @@ http://www.tooplate.com/view/2081-solution
 				</div>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-right" id="nav-menu">
-						<li id="home-cont"><a href="#" class="nav-active">PANDANSARI</a></li>
-						<li id="service-cont"><a href="#">LAYANAN</a></li>
-						<li id="menu-cont"><a href="#">MENU</a></li>
+						<li><a href="#" class="nav-active">PANDANSARI</a></li>
+						<li><a href="#">LAYANAN</a></li>
+						<li><a href="menu.php">MENU</a></li>
 						<li><a href="#">FASILITAS</a></li>
-						<li id="contact-cont"><a href="#">HUBUNGI</a></li>
+						<li><a href="contact.php">HUBUNGI</a></li>
 						<li><a href="#">GALERI</a></li>
 					</ul>
 				</div>
@@ -223,59 +223,5 @@ http://www.tooplate.com/view/2081-solution
 		<script src="js/jquery.flexslider.js"></script>
 		<!-- custom -->
 		<script src="js/custom.js"></script>
-		<!--function-->
-		<script>
-			$(document).ready(function(){
-				$("#home-cont").click(function(){
-
-					$.ajax({
-						method: "POST",
-						url: "controller.php",
-						data: {"function" : "get_content", "content" : "home"},
-
-						success: function(response){
-							$(".nav-active").removeClass("nav-active");
-							$("#home-cont").addClass("nav-active");
-							$(".main-content").html(response);
-						}
-					});
-				});
-			});
-
-			$(document).ready(function(){
-				$("#menu-cont").click(function(){
-
-					$.ajax({
-						method: "POST",
-						url: "controller.php",
-						data: {"function": "get_content", "content": "menu"},
-
-						success: function(response){
-							$(".nav-active").removeClass("nav-active");
-							$("#menu-cont").addClass("nav-active");
-							$(".main-content").html(response);
-						}
-					});
-				});
-			});
-
-			$(document).ready(function(){
-				$("#contact-cont").click(function(){
-
-					$.ajax({
-						method: "POST",
-						url: "controller.php",
-						data: {"function": "get_content", "content": "contact"},
-
-						success: function(response){
-							$(".nav-active").removeClass("nav-active");
-							$("#contact-cont").addClass("nav-active");
-							$(".main-content").html(response);
-						}
-					});
-				});
-			});
-		</script>
-
 	</body>
 </html>
