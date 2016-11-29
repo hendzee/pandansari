@@ -115,3 +115,7 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+
+#category-list > div.slick-list{
+  margin-left: 1.5em;
+}

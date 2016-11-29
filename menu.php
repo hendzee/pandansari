@@ -55,7 +55,7 @@ http://www.tooplate.com/view/2081-solution
 						<li><a href="#" class="nav-active">MENU</a></li>
 						<li><a href="#">FASILITAS</a></li>
 						<li><a href="contact.php">HUBUNGI</a></li>
-						<li><a href="#">GALERI</a></li>
+						<li><a href="galeri.php">GALERI</a></li>
 					</ul>
 				</div>
 			</div>
@@ -67,7 +67,7 @@ http://www.tooplate.com/view/2081-solution
       <!-- start service -->
       <div id="menu-list" style="margin-top:7em;">
       	<div class="container">
-      		<div class="slid slider">
+      		<div class="slid slider" id="category-list">
       			<div style="margin:1em;text-align:center;"><h3><span>M</span>akanan</h3></div>
       			<div style="margin:1em;text-align:center;"><h3><span>M</span>inuman</h3></div>
       			<div style="margin:1em;text-align:center;"><h3><span>P</span>aket <span>P</span>rasmanan</h3></div>
@@ -126,9 +126,162 @@ http://www.tooplate.com/view/2081-solution
       					</tfoot>
       				</table>
       			</div>
-      			<div><p>Data-minuman</p></div>
-      			<div><p>Data-prasmanan</p></div>
-      			<div><p>Data-nasi kotak</p></div>
+      			<div id="table-menu-2">
+							<table>
+      					<thead>
+      						<th colspan="2" style="background:transparent;"><img src="images/menu_2.jpg" style="width:100%;eight:150px;"></th>
+      					</thead>
+      				</table>
+      				<table class="table table-striped table-menu">
+      					<thead>
+      						<th><h3>Menu Minuman</h3></th>
+      						<th><h3>Keterangan</h3></th>
+      					</thead>
+      					<tbody>
+      						<tr>
+      							<td>Ayam Goreng</td>
+      							<td>Goreng</td>
+      						</tr>
+      						<tr>
+      							<td>Ati empela atau usus</td>
+      							<td>Goreng</td>
+      						</tr>
+      						<tr>
+      							<td>Kepala Ayam</td>
+      							<td>Goreng</td>
+      						</tr>
+      						<tr>
+      							<td>Nasi Goreng</td>
+      							<td>Goreng</td>
+      						</tr>
+      						<tr>
+      							<td>Nasi Goreng</td>
+      							<td>Goreng</td>
+      						</tr>
+      						<tr>
+      							<td>Nasi Goreng</td>
+      							<td>Goreng</td>
+      						</tr>
+      						<tr>
+      							<td>Nasi Goreng</td>
+      							<td>Goreng</td>
+      						</tr>
+      						<tr>
+      							<td>Nasi Goreng</td>
+      							<td>Goreng</td>
+      						</tr>
+      					</tbody>
+      					<tfoot>
+      						<tr>
+      							<td colspan="2"></td>
+      						</tr>
+      					</tfoot>
+      				</table>
+						</div>
+      			<div id="table-menu-3">
+							<table>
+      					<thead>
+      						<th colspan="2" style="background:transparent;"><img src="images/menu_3.jpg" style="width:100%;eight:150px;"></th>
+      					</thead>
+      				</table>
+      				<table class="table table-striped table-menu">
+      					<thead>
+      						<th><h3>Paket Prasmanan</h3></th>
+      						<th><h3>Keterangan</h3></th>
+      					</thead>
+      					<tbody>
+      						<tr>
+      							<td>Ayam Goreng</td>
+      							<td>Goreng</td>
+      						</tr>
+      						<tr>
+      							<td>Ati empela atau usus</td>
+      							<td>Goreng</td>
+      						</tr>
+      						<tr>
+      							<td>Kepala Ayam</td>
+      							<td>Goreng</td>
+      						</tr>
+      						<tr>
+      							<td>Nasi Goreng</td>
+      							<td>Goreng</td>
+      						</tr>
+      						<tr>
+      							<td>Nasi Goreng</td>
+      							<td>Goreng</td>
+      						</tr>
+      						<tr>
+      							<td>Nasi Goreng</td>
+      							<td>Goreng</td>
+      						</tr>
+      						<tr>
+      							<td>Nasi Goreng</td>
+      							<td>Goreng</td>
+      						</tr>
+      						<tr>
+      							<td>Nasi Goreng</td>
+      							<td>Goreng</td>
+      						</tr>
+      					</tbody>
+      					<tfoot>
+      						<tr>
+      							<td colspan="2"></td>
+      						</tr>
+      					</tfoot>
+      				</table>
+						</div>
+      			<div id="table-menu-4">
+							<table>
+      					<thead>
+      						<th colspan="2" style="background:transparent;"><img src="images/menu_4.jpg" style="width:100%;eight:150px;"></th>
+      					</thead>
+      				</table>
+      				<table class="table table-striped table-menu">
+      					<thead>
+      						<th><h3>Paket Nasi Kotak</h3></th>
+      						<th><h3>Keterangan</h3></th>
+      					</thead>
+      					<tbody>
+      						<tr>
+      							<td>Ayam Goreng</td>
+      							<td>Goreng</td>
+      						</tr>
+      						<tr>
+      							<td>Ati empela atau usus</td>
+      							<td>Goreng</td>
+      						</tr>
+      						<tr>
+      							<td>Kepala Ayam</td>
+      							<td>Goreng</td>
+      						</tr>
+      						<tr>
+      							<td>Nasi Goreng</td>
+      							<td>Goreng</td>
+      						</tr>
+      						<tr>
+      							<td>Nasi Goreng</td>
+      							<td>Goreng</td>
+      						</tr>
+      						<tr>
+      							<td>Nasi Goreng</td>
+      							<td>Goreng</td>
+      						</tr>
+      						<tr>
+      							<td>Nasi Goreng</td>
+      							<td>Goreng</td>
+      						</tr>
+      						<tr>
+      							<td>Nasi Goreng</td>
+      							<td>Goreng</td>
+      						</tr>
+      					</tbody>
+      					<tfoot>
+      						<tr>
+      							<td colspan="2"></td>
+      						</tr>
+      					</tfoot>
+      				</table>
+						</div>
       		</div>
       	</div>
       </div>
@@ -212,7 +365,7 @@ http://www.tooplate.com/view/2081-solution
       	asNavFor: '.data-menu',
       	responsive: [
       		{
-      			breakpoint: 768,
+      			breakpoint: 468,
       			settings: {
       				arrows: false,
       				centerMode: true,

@@ -55,7 +55,7 @@ http://www.tooplate.com/view/2081-solution
 						<li><a href="menu.php">MENU</a></li>
 						<li><a href="#">FASILITAS</a></li>
 						<li><a href="#" class="nav-active">HUBUNGI</a></li>
-						<li><a href="#">GALERI</a></li>
+						<li><a href="galeri.php">GALERI</a></li>
 					</ul>
 				</div>
 			</div>

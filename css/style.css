@@ -638,11 +638,14 @@ footer .social-icon
 	background: #e74c3c;
 }
 
-#menu-list .table-menu th, #menu-list .table-menu th > h3{
+#menu-list .table-menu th{
 	text-align: center;
 	background: #e74c3c;
-	color: #fff;
 	padding-right: 0;
+}
+
+#menu-list .table-menu th > h3{
+	color: #fff;
 }
 
 #menu-list .table-menu th > h3{
@@ -672,8 +675,12 @@ footer .social-icon
 	color: #fff;
 }
 
-#table-menu-1{
+#table-menu-1, #table-menu-2, #table-menu-3, #table-menu-4{
 	width:70%;
+}
+
+#galeri-title h3{
+	font-size: 5em;
 }
 
 @media only screen and (max-width: 1199px) {
