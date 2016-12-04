@@ -60,22 +60,30 @@ http://www.tooplate.com/view/2081-solution
 		<!-- end navigation -->
 
 		<div class="main-content">
-			<div class="row" style="margin-top:7em;margin-bottom:7.5em;width:85%;margin-left:auto;margin-right:auto;">
-				<div class="col-md-6">
-					<div class="fotorama" data-nav="thumbs">
-					  <a href="images/galeri/bakmi.jpg"><img src="images/galeri/bakmi.jpg"></a>
-					  <a href="images/galeri/bebek-goreng.jpg"><img src="images/galeri/bebek-goreng.jpg"></a>
-						<a href="images/galeri/bakmi.jpg"><img src="images/galeri/bakmi.jpg"></a>
-					  <a href="images/galeri/bebek-goreng.jpg"><img src="images/galeri/bebek-goreng.jpg"></a>
-						<a href="images/galeri/bakmi.jpg"><img src="images/galeri/bakmi.jpg"></a>
-					  <a href="images/galeri/bebek-goreng.jpg"><img src="images/galeri/bebek-goreng.jpg"></a>
-						<a href="images/galeri/bakmi.jpg"><img src="images/galeri/bakmi.jpg"></a>
-					  <a href="images/galeri/bebek-goreng.jpg"><img src="images/galeri/bebek-goreng.jpg"></a>
+			<div class="row" id="galeri">
+				<div class="col-md-12">
+					<div class="fotorama" data-nav="thumbs" data-loop="true" data-autoplay="true" data-width="100%" data-height="80%" data-fit="cover">
+					  <a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
+						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
+						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
+						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
+						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
+						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
+						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
+						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
+						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
+						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
+						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
+						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
+						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
+						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
+						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
+						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
+						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
+						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
+						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
+						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
 					</div>
-				</div>
-				<div class="col-md-6" id="galeri-title">
-					<p><h3>Galeri</h3></p>
-					<p><h3>Warung Pandansari</h3></p>
 				</div>
 			</div>
 		</div>

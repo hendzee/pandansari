@@ -51,7 +51,7 @@ http://www.tooplate.com/view/2081-solution
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-right" id="nav-menu">
 						<li><a href="index.php">PANDANSARI</a></li>
-						<li><a href="#">LAYANAN</a></li>
+						<li><a href="service.php">LAYANAN</a></li>
 						<li><a href="menu.php">MENU</a></li>
 						<li><a href="#">FASILITAS</a></li>
 						<li><a href="#" class="nav-active">HUBUNGI</a></li>

@@ -33,8 +33,13 @@ http://www.tooplate.com/view/2081-solution
 		<link rel="stylesheet" href="css/slick-theme.css">
 		<!-- DataTables -->
 	  <link rel="stylesheet" href="css/dataTables.bootstrap.css">
+    <!--pleasewait-->
+		<link href="css/please-wait.css" rel="stylesheet">
+		<!--fotorama-->
+		<link rel='stylesheet' href='css/fotorama.css'>
 
 	</head>
+
 	<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
 
 		<!-- start navigation -->
@@ -51,7 +56,7 @@ http://www.tooplate.com/view/2081-solution
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-right" id="nav-menu">
 						<li><a href="#" class="nav-active">PANDANSARI</a></li>
-						<li><a href="#">LAYANAN</a></li>
+						<li><a href="service.php">LAYANAN</a></li>
 						<li><a href="menu.php">MENU</a></li>
 						<li><a href="#">FASILITAS</a></li>
 						<li><a href="contact.php">HUBUNGI</a></li>
@@ -73,7 +78,7 @@ http://www.tooplate.com/view/2081-solution
 			        	<img src="images/slider/1.jpg" alt="Slide 1">
 			        	<div class="slider-caption">
 						    <div class="templatemo_homewrapper">
-						      <h2 class="wow fadeInDown" data-wow-delay="2000">
+						      <h2>
 										Cita Rasa Indonesia
 									</h2>
 						    </div>
@@ -83,7 +88,7 @@ http://www.tooplate.com/view/2081-solution
 			        	<img src="images/slider/2.jpg" alt="Slide 2">
 			        	<div class="slider-caption">
 						    <div class="templatemo_homewrapper">
-						      <h2 class="wow fadeInDown" data-wow-delay="2000">
+						      <h2>
 										Menggugah Selera
 									</h2>
 						    </div>
@@ -95,59 +100,65 @@ http://www.tooplate.com/view/2081-solution
 			</section>
 			<!-- end home -->
 
-			<!-- start service -->
-			<div id="service">
+			<!-- home-menu -->
+			<div id="home-menu">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6 col-sm-6">
 							<div class="row media">
-								<div class="col-md-6 col-sm-6 wow fadeIn">
+								<div class="col-md-6 col-sm-6 wow fadeIn menu-cover">
 									<img src="images/makanan.jpg"/>
 								</div>
-								<div class="col-md-6 col-sm-6">
+								<div class="col-md-6 col-sm-6 desc-menu">
 									<h3><span>M</span>akanan</h3>
 									<p>Kami menjual berbagai makanan. Dengan beberapa variasi,  digoreng, dibakar.</p>
 									<div class="btn-style"><a href="#">Lihat Menu</a></div>
+                  <div class="menu-num"><h3>1</h3></div>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-6 col-sm-6">
 							<div class="row media">
-								<div class="col-md-6 col-sm-6 wow fadeIn">
+								<div class="col-md-6 col-sm-6 wow fadeIn menu-cover">
 									<img src="images/soda.jpg"/>
 								</div>
-								<div class="col-md-6 col-sm-6">
+								<div class="col-md-6 col-sm-6 desc-menu">
 									<h3><span>M</span>inuman</h3>
 									<p>Kami menjual berbagai makanan. Dengan beberapa variasi,  digoreng, dibakar.</p>
 									<div class="btn-style"><a href="#">Lihat Menu</a></div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-6">
-							<div class="row media">
-								<div class="col-md-6 col-sm-6 wow fadeIn">
-									<img src="images/bakmi.jpg"/>
-								</div>
-								<div class="col-md-6 col-sm-6">
-									<h3><span>P</span>aket <span>P</span>rasmanan</h3>
-									<p>Kami menjual berbagai makanan. Dengan beberapa variasi,  digoreng, dibakar.</p>
-									<div class="btn-style"><a href="#">Lihat Menu</a></div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-6">
-							<div class="row media">
-								<div class="col-md-6 col-sm-6 wow fadeIn">
-									<img src="images/sambal.jpg"/>
-								</div>
-								<div class="col-md-6 col-sm-6">
-									<h3><span>P</span>aket <span>N</span>asi <span>K</span>otak</h3>
-									<p>Kami menjual berbagai makanan. Dengan beberapa variasi,  digoreng, dibakar.</p>
-									<div class="btn-style"><a href="#">Lihat Menu</a></div>
+                  <div class="menu-num"><h3>2</h3></div>
 								</div>
 							</div>
 						</div>
 					</div>
+          <div class="row bottom-side">
+            <div class="col-md-6 col-sm-6">
+              <div class="row media">
+                <div class="col-md-6 col-sm-6 wow fadeIn menu-cover">
+                  <img src="images/makanan.jpg"/>
+                </div>
+                <div class="col-md-6 col-sm-6 desc-menu">
+                  <h3><span>M</span>akanan</h3>
+                  <p>Kami menjual berbagai makanan. Dengan beberapa variasi,  digoreng, dibakar.</p>
+                  <div class="btn-style"><a href="#">Lihat Menu</a></div>
+                  <div class="menu-num"><h3>3</h3></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="row media">
+                <div class="col-md-6 col-sm-6 wow fadeIn menu-cover">
+                  <img src="images/soda.jpg"/>
+                </div>
+                <div class="col-md-6 col-sm-6 desc-menu">
+                  <h3><span>M</span>inuman</h3>
+                  <p>Kami menjual berbagai makanan. Dengan beberapa variasi,  digoreng, dibakar.</p>
+                  <div class="btn-style"><a href="#">Lihat Menu</a></div>
+                  <div class="menu-num"><h3>4</h3></div>
+                </div>
+              </div>
+            </div>
+          </div>
 				</div>
 			</div>
 			<!-- end service -->
@@ -156,13 +167,18 @@ http://www.tooplate.com/view/2081-solution
 			<div id="divider">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-1 col-sm-1"></div>
-						<div class="col-md-8 col-sm-8">
-							<h2 class="wow bounce">Kami memberikan layanan <strong>terbaik</strong></h2>
+						<div class="col-md-7 col-sm-7 invitation">
+							<h2 id="divider-heading" class="wow fadeInUp" data-wow-delay="0.6s">Kami memberikan layanan <strong>terbaik</strong></h2>
 							<p class="wow fadeInUp" data-wow-delay="0.9s">Nulla ultricies bibendum augue et molestie. Suspendisse pellentesque mollis imperdiet. Quisque sodales laoreet tincidunt. Phasellus ut mi orci. Vivamus id odio ac justo tincidunt placerat. Nulla facilisi. Vivamus et dolor urna. Sed vestibulum urna justo, nec malesuada urna aliquet et.</p>
 							<div class="btn-style"><a href="#">Segera Kunjungi</a></div>
 						</div>
-						<div class="col-md-2 col-sm-2"></div>
+						<div class="col-md-5 col-sm-5 mini-galeri">
+							<div class="fotorama" data-nav="false" data-autoplay="2000" data-loop="true" data-autoplay="true" data-width="100%" data-height="40%" data-fit="cover" data-arrows="false" data-click="false">
+								<a href="images/wong1.jpg" style="width:100%"></a>
+								<a href="images/wong2.jpg" style="width:100%"></a>
+								<a href="images/wong3.jpg" style="width:100%"></a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -203,7 +219,7 @@ http://www.tooplate.com/view/2081-solution
 					</div>
 				</div>
 				<div class="copyright">
-					<p>Copyright &copy; <span>Warung Pandansari</span></p>
+					<p>Copyright &copy; 2016 <span>Warung Pandansari</span> | Website by heybey studio</p>
 				</div>
 			</div>
 		</footer>
@@ -223,5 +239,18 @@ http://www.tooplate.com/view/2081-solution
 		<script src="js/jquery.flexslider.js"></script>
 		<!-- custom -->
 		<script src="js/custom.js"></script>
+		<!-- fotorama -->
+		<script src='js/fotorama.js'></script>
+		<!--pleasewait-->
+		<script type="text/javascript" src="js/please-wait.min.js"></script>
+	 	<script type="text/javascript">
+
+		 	var loading_screen = pleaseWait({
+		  logo: "images/logo.png",
+		  backgroundColor: '#e74c3c',
+		  loadingHtml: "<div class='sk-three-bounce'><div class='sk-child sk-bounce1'></div><div class='sk-child sk-bounce2'></div><div class='sk-child sk-bounce'></div></div><p class='loading-message'>Mohon tunggu...</p>"
+			});
+			loading_screen.finish();
+	 </script>
 	</body>
 </html>

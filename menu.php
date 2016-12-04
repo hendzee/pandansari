@@ -33,6 +33,8 @@ http://www.tooplate.com/view/2081-solution
 		<link rel="stylesheet" href="css/slick-theme.css">
 		<!-- DataTables -->
 	  <link rel="stylesheet" href="css/dataTables.bootstrap.css">
+		<!--pleasewait-->
+		<link href="css/please-wait.css" rel="stylesheet">
 
 	</head>
 	<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
@@ -51,7 +53,7 @@ http://www.tooplate.com/view/2081-solution
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-right" id="nav-menu">
 						<li><a href="index.php">PANDANSARI</a></li>
-						<li><a href="#">LAYANAN</a></li>
+						<li><a href="service.php">LAYANAN</a></li>
 						<li><a href="#" class="nav-active">MENU</a></li>
 						<li><a href="#">FASILITAS</a></li>
 						<li><a href="contact.php">HUBUNGI</a></li>
@@ -62,12 +64,14 @@ http://www.tooplate.com/view/2081-solution
 		</div>
 		<!-- end navigation -->
 
+		<div class="parallax-window"></div>
+
 		<div class="main-content">
 
       <!-- start service -->
-      <div id="menu-list" style="margin-top:7em;">
-      	<div class="container">
-      		<div class="slid slider" id="category-list">
+      <div id="menu-list">
+      	<div class="container menu-book">
+      		<div class="slid slider wow fadeInUp" id="category-list" data-wow-delay="0.6s">
       			<div style="margin:1em;text-align:center;"><h3><span>M</span>akanan</h3></div>
       			<div style="margin:1em;text-align:center;"><h3><span>M</span>inuman</h3></div>
       			<div style="margin:1em;text-align:center;"><h3><span>P</span>aket <span>P</span>rasmanan</h3></div>
@@ -80,7 +84,7 @@ http://www.tooplate.com/view/2081-solution
       						<th colspan="2" style="background:transparent;"><img src="images/menu.jpg" style="width:100%;eight:150px;"></th>
       					</thead>
       				</table>
-      				<table class="table table-striped table-menu">
+      				<table class="table table-menu">
       					<thead>
       						<th><h3>Menu Makanan</h3></th>
       						<th><h3>Keterangan</h3></th>
@@ -410,5 +414,30 @@ http://www.tooplate.com/view/2081-solution
       });
       });
     </script>
+		<!--parallax-->
+		<script src="js/parallax.min.js"></script>
+ 	 	<script>
+ 		 function callparallax(){
+ 			 $('.parallax-window').parallax({
+ 				imageSrc: './images/bebek-goreng.jpg',
+ 				zIndex:1000,
+ 				naturalWidth: 900,
+ 				naturalHeight: 600
+ 			});
+ 		}
+
+ 		callparallax();
+ 	 </script>
+		<!--pleasewait-->
+		<script type="text/javascript" src="js/please-wait.min.js"></script>
+	 	<script type="text/javascript">
+
+		 	var loading_screen = pleaseWait({
+		  logo: "images/logo.png",
+		  backgroundColor: '#e74c3c',
+		  loadingHtml: "<div class='sk-three-bounce'><div class='sk-child sk-bounce1'></div><div class='sk-child sk-bounce2'></div><div class='sk-child sk-bounce'></div></div><p class='loading-message'>Mohon tunggu...</p>"
+			});
+			loading_screen.finish();
+	 </script>
 	</body>
 </html>

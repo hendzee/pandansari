@@ -35,7 +35,6 @@ http://www.tooplate.com/view/2081-solution
 	  <link rel="stylesheet" href="css/dataTables.bootstrap.css">
 		<!--pleasewait-->
 		<link href="css/please-wait.css" rel="stylesheet">
-
 	</head>
 	<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
 
@@ -64,8 +63,7 @@ http://www.tooplate.com/view/2081-solution
 		</div>
 		<!-- end navigation -->
 
-		<div class="container" style="background:#000">
-		</div>
+		<div class="parallax-window"></div>
 
 		<div class="main-content">
       <div class="row wow fadeInUp" id="service-page" data-wow-delay="0.3s">
@@ -202,6 +200,20 @@ http://www.tooplate.com/view/2081-solution
 		  loadingHtml: "<div class='sk-three-bounce'><div class='sk-child sk-bounce1'></div><div class='sk-child sk-bounce2'></div><div class='sk-child sk-bounce'></div></div><p class='loading-message'>Mohon tunggu...</p>"
 			});
 			loading_screen.finish();
+	 </script>
+	 <!--paralax-->
+	 <script src="js/parallax.min.js"></script>	 
+	 <script>
+		 function callparallax(){
+			 $('.parallax-window').parallax({
+				imageSrc: './images/makanan.jpg',
+				zIndex:1000,
+				naturalWidth: 900,
+				naturalHeight: 600
+			});
+		}
+
+		callparallax();
 	 </script>
 	</body>
 </html>
