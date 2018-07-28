@@ -1,9 +1,10 @@
+<?php include_once "config.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
 
-		<title>Warung PandanSari</title>
+		<title>Warung Pandansari</title>
 <!--
 
 Template 2081 Solution
@@ -16,7 +17,7 @@ http://www.tooplate.com/view/2081-solution
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="keywords" content="">
 		<meta name="description" content="">
-
+		<link href='images/icon.ico' rel='icon' type='image/x-icon'/>
 		<!-- animate -->
 		<link rel="stylesheet" href="css/animate.min.css">
 		<!-- bootstrap -->
@@ -24,7 +25,8 @@ http://www.tooplate.com/view/2081-solution
 		<!-- font-awesome -->
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 		<!-- google font -->
-		<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">-->
+		<link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
 		<!-- custom -->
 		<link rel="stylesheet" href="css/style.css">
@@ -55,7 +57,7 @@ http://www.tooplate.com/view/2081-solution
 						<li><a href="index.php">PANDANSARI</a></li>
 						<li><a href="service.php">LAYANAN</a></li>
 						<li><a href="#" class="nav-active">MENU</a></li>
-						<li><a href="#">FASILITAS</a></li>
+						<li><a href="facility.php">FASILITAS</a></li>
 						<li><a href="contact.php">HUBUNGI</a></li>
 						<li><a href="galeri.php">GALERI</a></li>
 					</ul>
@@ -64,24 +66,27 @@ http://www.tooplate.com/view/2081-solution
 		</div>
 		<!-- end navigation -->
 
-		<div class="parallax-window"></div>
+		<!--top content-->
+			<div class="parallax-window">
+						<div class="title-page"><h3>Sajian Kami</h3></div>
+			</div>
+		<!--end top content-->
 
 		<div class="main-content">
 
       <!-- start service -->
       <div id="menu-list">
       	<div class="container menu-book">
-      		<div class="slid slider wow fadeInUp" id="category-list" data-wow-delay="0.6s">
+      		<div class="slid slider" id="category-list">
       			<div style="margin:1em;text-align:center;"><h3><span>M</span>akanan</h3></div>
       			<div style="margin:1em;text-align:center;"><h3><span>M</span>inuman</h3></div>
-      			<div style="margin:1em;text-align:center;"><h3><span>P</span>aket <span>P</span>rasmanan</h3></div>
-      			<div style="margin:1em;text-align:center;"><h3><span>P</span>aket <span>N</span>asi <span>K</span>otak</h3></div>
+      			<div style="margin:1em;text-align:center;"><h3><span>M</span>enu <span>P</span>aket</h3></div>
       		</div>
       		<div class="data-menu">
       			<div id="table-menu-1">
       				<table>
       					<thead>
-      						<th colspan="2" style="background:transparent;"><img src="images/menu.jpg" style="width:100%;eight:150px;"></th>
+      						<th colspan="2" style="background:transparent;"><img src="images/menu.jpg" style="width:100%;"></th>
       					</thead>
       				</table>
       				<table class="table table-menu">
@@ -90,38 +95,19 @@ http://www.tooplate.com/view/2081-solution
       						<th><h3>Keterangan</h3></th>
       					</thead>
       					<tbody>
-      						<tr>
-      							<td>Ayam Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Ati empela atau usus</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Kepala Ayam</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Nasi Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Nasi Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Nasi Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Nasi Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Nasi Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
+									<?php
+										$ssql = "SELECT * FROM menu WHERE jenis='Makanan'";
+										$query = mysqli_query($con, $ssql);
+										$row = mysqli_num_rows($query);
+
+										if($row <= 0){
+											echo "<tr><td colspan='2'>Stok Kosong</td></tr>";
+										}else{
+											while($record = mysqli_fetch_array($query)){
+												echo "<tr><td>".$record['nama']."</td><td>".$record['keterangan']."</td></tr>";
+											}
+										}
+									?>
       					</tbody>
       					<tfoot>
       						<tr>
@@ -133,47 +119,28 @@ http://www.tooplate.com/view/2081-solution
       			<div id="table-menu-2">
 							<table>
       					<thead>
-      						<th colspan="2" style="background:transparent;"><img src="images/menu_2.jpg" style="width:100%;eight:150px;"></th>
+      						<th colspan="2" style="background:transparent;"><img src="images/menu_2.jpg" style="width:100%;"></th>
       					</thead>
       				</table>
-      				<table class="table table-striped table-menu">
+      				<table class="table table-menu">
       					<thead>
       						<th><h3>Menu Minuman</h3></th>
       						<th><h3>Keterangan</h3></th>
       					</thead>
       					<tbody>
-      						<tr>
-      							<td>Ayam Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Ati empela atau usus</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Kepala Ayam</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Nasi Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Nasi Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Nasi Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Nasi Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Nasi Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
+									<?php
+										$ssql = "SELECT * FROM menu WHERE jenis='Minuman'";
+										$query = mysqli_query($con, $ssql);
+										$row = mysqli_num_rows($query);
+
+										if($row <= 0){
+											echo "<tr><td colspan='2'>Stok Kosong</td></tr>";
+										}else{
+											while($record = mysqli_fetch_array($query)){
+												echo "<tr><td>".$record['nama']."</td><td>".$record['keterangan']."</td></tr>";
+											}
+										}
+									?>
       					</tbody>
       					<tfoot>
       						<tr>
@@ -185,99 +152,28 @@ http://www.tooplate.com/view/2081-solution
       			<div id="table-menu-3">
 							<table>
       					<thead>
-      						<th colspan="2" style="background:transparent;"><img src="images/menu_3.jpg" style="width:100%;eight:150px;"></th>
+      						<th colspan="2" style="background:transparent;"><img src="images/menu_3.jpg" style="width:100%;"></th>
       					</thead>
       				</table>
-      				<table class="table table-striped table-menu">
+      				<table class="table table-menu">
       					<thead>
       						<th><h3>Paket Prasmanan</h3></th>
       						<th><h3>Keterangan</h3></th>
       					</thead>
       					<tbody>
-      						<tr>
-      							<td>Ayam Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Ati empela atau usus</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Kepala Ayam</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Nasi Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Nasi Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Nasi Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Nasi Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Nasi Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
-      					</tbody>
-      					<tfoot>
-      						<tr>
-      							<td colspan="2"></td>
-      						</tr>
-      					</tfoot>
-      				</table>
-						</div>
-      			<div id="table-menu-4">
-							<table>
-      					<thead>
-      						<th colspan="2" style="background:transparent;"><img src="images/menu_4.jpg" style="width:100%;eight:150px;"></th>
-      					</thead>
-      				</table>
-      				<table class="table table-striped table-menu">
-      					<thead>
-      						<th><h3>Paket Nasi Kotak</h3></th>
-      						<th><h3>Keterangan</h3></th>
-      					</thead>
-      					<tbody>
-      						<tr>
-      							<td>Ayam Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Ati empela atau usus</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Kepala Ayam</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Nasi Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Nasi Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Nasi Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Nasi Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
-      						<tr>
-      							<td>Nasi Goreng</td>
-      							<td>Goreng</td>
-      						</tr>
+									<?php
+										$ssql = "SELECT * FROM menu WHERE jenis='Paket'";
+										$query = mysqli_query($con, $ssql);
+										$row = mysqli_num_rows($query);
+
+										if($row <= 0){
+											echo "<tr><td colspan='2'>Stok Kosong</td></tr>";
+										}else{
+											while($record = mysqli_fetch_array($query)){
+												echo "<tr><td>".$record['nama']."</td><td>".$record['keterangan']."</td></tr>";
+											}
+										}
+									?>
       					</tbody>
       					<tfoot>
       						<tr>
@@ -302,31 +198,35 @@ http://www.tooplate.com/view/2081-solution
 		<!-- start footer -->
 		<footer>
 			<div class="container">
-				<div class="row social-icon wow fadeInUp" data-wow-delay="0.9s">
-					<div class="col-md-12 col-sm-12">
-
-					</div>
-					<div class="col-md-2 col-sm-2">
+				<div class="row social-icon">
+					<div class="col-xs-2">
 						<a href="#" class="fa fa-facebook fa-2x"></a>
 					</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-xs-2">
 						<a href="#" class="fa fa-twitter fa-2x"></a>
 					</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-xs-2">
 						<a href="#" class="fa fa-instagram fa-2x"></a>
 					</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-xs-2">
 						<a href="#" class="fa fa-pinterest fa-2x"></a>
 					</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-xs-2">
 						<a href="#" class="fa fa-google fa-2x"></a>
 					</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-xs-2">
 						<a href="#" class="fa fa-youtube fa-2x"></a>
 					</div>
 				</div>
 				<div class="copyright">
-					<p>Copyright &copy; <span>Warung Pandansari</span></p>
+					<div class="row">
+						<div class="col-md-12">
+							<p>Copyright &copy; 2016 <span>Warung Pandansari</span></p>
+						</div>
+						<div class="col-md-12">
+							<p>Website by weeffee studio</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</footer>
@@ -334,14 +234,23 @@ http://www.tooplate.com/view/2081-solution
 
 		<!-- jQuery -->
 		<script src="js/jquery.min.js"></script>
+		<!--pleasewait-->
+		<script type="text/javascript" src="js/please-wait.min.js"></script>
+	 	<script type="text/javascript">
+
+		 	var loading_screen = pleaseWait({
+		  logo: "images/logo.png",
+		  backgroundColor: '#e74c3c',
+		  loadingHtml: "<div class='sk-three-bounce'><div class='sk-child sk-bounce1'></div><div class='sk-child sk-bounce2'></div><div class='sk-child sk-bounce'></div></div><p class='loading-message'>Mohon tunggu...</p>"
+			});
+			loading_screen.finish();
+	 </script>
 		<!-- bootstrap -->
 		<script src="js/bootstrap.min.js"></script>
 		<!-- isotope -->
 		<script src="js/isotope.js"></script>
 		<!-- images loaded -->
    	<script src="js/imagesloaded.min.js"></script>
-   		<!-- wow -->
-		<script src="js/wow.min.js"></script>
 		<!-- jquery flexslider -->
 		<script src="js/jquery.flexslider.js"></script>
 		<!-- custom -->
@@ -354,6 +263,7 @@ http://www.tooplate.com/view/2081-solution
     <!--function-->
     <script>
       $(document).ready(function(){
+
       $('.data-menu').slick({
       	slidesToShow: 1,
       	slidesToScroll: 1,
@@ -365,7 +275,7 @@ http://www.tooplate.com/view/2081-solution
       $('.slid').slick({
       	centerMode: true,
       	centerPadding: '60px',
-      	slidesToShow: 3,
+      	slidesToShow: 1,
       	asNavFor: '.data-menu',
       	responsive: [
       		{
@@ -374,7 +284,7 @@ http://www.tooplate.com/view/2081-solution
       				arrows: false,
       				centerMode: true,
       				centerPadding: '40px',
-      				slidesToShow: 3
+      				slidesToShow: 1
       			}
       		},
       		{
@@ -389,55 +299,19 @@ http://www.tooplate.com/view/2081-solution
       	]
       });
       });
-
-      $(document).ready(function(){
-      $(".table-menu").DataTable({
-      	language: {
-        paginate: {
-            previous: '‹',
-            next:     '›'
-        },
-        aria: {
-            paginate: {
-                previous: 'Previous',
-                next:     'Next'
-            }
-        }
-      },
-      	"pageLength": 5,
-      	"paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": false,
-        "info": false,
-        "autoWidth": false
-      });
-      });
     </script>
 		<!--parallax-->
 		<script src="js/parallax.min.js"></script>
  	 	<script>
  		 function callparallax(){
  			 $('.parallax-window').parallax({
- 				imageSrc: './images/bebek-goreng.jpg',
- 				zIndex:1000,
- 				naturalWidth: 900,
- 				naturalHeight: 600
- 			});
- 		}
+ 					imageSrc: './images/bebek-goreng.jpg',
+ 					naturalWidth: 900,
+ 					naturalHeight: 600
+ 				});
+ 			}
 
- 		callparallax();
- 	 </script>
-		<!--pleasewait-->
-		<script type="text/javascript" src="js/please-wait.min.js"></script>
-	 	<script type="text/javascript">
-
-		 	var loading_screen = pleaseWait({
-		  logo: "images/logo.png",
-		  backgroundColor: '#e74c3c',
-		  loadingHtml: "<div class='sk-three-bounce'><div class='sk-child sk-bounce1'></div><div class='sk-child sk-bounce2'></div><div class='sk-child sk-bounce'></div></div><p class='loading-message'>Mohon tunggu...</p>"
-			});
-			loading_screen.finish();
-	 </script>
+ 			callparallax();
+ 	 	</script>
 	</body>
 </html>

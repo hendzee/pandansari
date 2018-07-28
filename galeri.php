@@ -1,9 +1,10 @@
+<?php include_once "config.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
 
-		<title>Warung PandanSari</title>
+		<title>Warung Pandansari</title>
 <!--
 
 Template 2081 Solution
@@ -16,7 +17,7 @@ http://www.tooplate.com/view/2081-solution
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="keywords" content="">
 		<meta name="description" content="">
-
+    <link href='images/icon.ico' rel='icon' type='image/x-icon'/>
 		<!-- animate -->
 		<link rel="stylesheet" href="css/animate.min.css">
 		<!-- bootstrap -->
@@ -24,12 +25,16 @@ http://www.tooplate.com/view/2081-solution
 		<!-- font-awesome -->
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 		<!-- google font -->
-		<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+		<!--<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">-->
+		<!--<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">-->
+		<link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
 		<!-- custom -->
 		<link rel="stylesheet" href="css/style.css">
 		<!--fotorama-->
 		<link rel='stylesheet' href='css/fotorama.css'>
+		<!--pleasewait-->
+		<link href="css/please-wait.css" rel="stylesheet">
 
 	</head>
 	<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
@@ -48,9 +53,9 @@ http://www.tooplate.com/view/2081-solution
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-right" id="nav-menu">
 						<li><a href="index.php">PANDANSARI</a></li>
-						<li><a href="#">LAYANAN</a></li>
+						<li><a href="service.php">LAYANAN</a></li>
 						<li><a href="menu.php">MENU</a></li>
-						<li><a href="#">FASILITAS</a></li>
+						<li><a href="facility.php">FASILITAS</a></li>
 						<li><a href="contact.php">HUBUNGI</a></li>
 						<li><a href="#" class="nav-active">GALERI</a></li>
 					</ul>
@@ -59,30 +64,24 @@ http://www.tooplate.com/view/2081-solution
 		</div>
 		<!-- end navigation -->
 
+		<!--top content-->
+			<div class="parallax-window">
+							<div class="title-page"><h3>Galeri Kami</h3></div>
+			</div>
+		<!--end top content-->
+
 		<div class="main-content">
 			<div class="row" id="galeri">
 				<div class="col-md-12">
 					<div class="fotorama" data-nav="thumbs" data-loop="true" data-autoplay="true" data-width="100%" data-height="80%" data-fit="cover">
-					  <a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
-						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
-						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
-						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
-						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
-						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
-						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
-						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
-						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
-						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
-						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
-						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
-						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
-						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
-						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
-						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
-						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
-						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
-						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
-						<a href="images/galeri/wong1.jpg"><img src="images/galeri/wong1.jpg"></a>
+            <?php
+              $ssql = "SELECT * FROM galeri";
+              $query = mysqli_query($con, $ssql);
+
+              while($record = mysqli_fetch_array($query)){
+            ?>
+            <a href="images/galeri/<?php echo $record['gambar'];?>"><img src="images/galeri/<?php echo $record['gambar']; ?>"></a>
+            <?php } ?>
 					</div>
 				</div>
 			</div>
@@ -96,33 +95,57 @@ http://www.tooplate.com/view/2081-solution
 		</div>
 
 		<!-- start footer -->
+		<?php
+			$facebook = "";
+			$twitter = "";
+			$instagram = "";
+			$pinterest = "";
+			$google_plus = "";
+			$youtube = "";
+
+			$ssql = "SELECT * FROM info WHERE id = '1'";
+			$query = mysqli_query($con, $ssql);
+
+			while($record = mysqli_fetch_array($query)){
+				$facebook = $record['facebook'];
+				$twitter = $record['twitter'];
+				$instagram = $record['instagram'];
+				$pinterest = $record['pinterest'];
+				$google_plus = $record['google_plus'];
+				$youtube = $record['youtube'];
+			}
+		?>
 		<footer>
 			<div class="container">
-				<div class="row social-icon wow fadeInUp" data-wow-delay="0.9s">
-					<div class="col-md-12 col-sm-12">
-
+				<div class="row social-icon">
+					<div class="col-xs-2">
+						<a href="<?php echo $facebook; ?>" class="fa fa-facebook fa-2x"></a>
 					</div>
-					<div class="col-md-2 col-sm-2">
-						<a href="#" class="fa fa-facebook fa-2x"></a>
+					<div class="col-xs-2">
+						<a href="<?php echo $twitter; ?>" class="fa fa-twitter fa-2x"></a>
 					</div>
-					<div class="col-md-2 col-sm-2">
-						<a href="#" class="fa fa-twitter fa-2x"></a>
+					<div class="col-xs-2">
+						<a href="<?php echo $instagram; ?>" class="fa fa-instagram fa-2x"></a>
 					</div>
-					<div class="col-md-2 col-sm-2">
-						<a href="#" class="fa fa-instagram fa-2x"></a>
+					<div class="col-xs-2">
+						<a href="<?php echo $pinterest; ?>" class="fa fa-pinterest fa-2x"></a>
 					</div>
-					<div class="col-md-2 col-sm-2">
-						<a href="#" class="fa fa-pinterest fa-2x"></a>
+					<div class="col-xs-2">
+						<a href="<?php echo $google_plus; ?>" class="fa fa-google fa-2x"></a>
 					</div>
-					<div class="col-md-2 col-sm-2">
-						<a href="#" class="fa fa-google fa-2x"></a>
-					</div>
-					<div class="col-md-2 col-sm-2">
-						<a href="#" class="fa fa-youtube fa-2x"></a>
+					<div class="col-xs-2">
+						<a href="<?php echo $youtube; ?>" class="fa fa-youtube fa-2x"></a>
 					</div>
 				</div>
 				<div class="copyright">
-					<p>Copyright &copy; <span>Warung Pandansari</span></p>
+					<div class="row">
+						<div class="col-md-12">
+							<p>Copyright &copy; 2016 <span>Warung Pandansari</span></p>
+						</div>
+						<div class="col-md-12">
+							<p>Website by weeffee studio</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</footer>
@@ -130,19 +153,41 @@ http://www.tooplate.com/view/2081-solution
 
 		<!-- jQuery -->
 		<script src="js/jquery.min.js"></script>
+		<!--pleasewait-->
+ 	 <script type="text/javascript" src="js/please-wait.min.js"></script>
+ 	 <script type="text/javascript">
+
+ 		 var loading_screen = pleaseWait({
+ 		 logo: "images/logo.png",
+ 		 backgroundColor: '#e74c3c',
+ 		 loadingHtml: "<div class='sk-three-bounce'><div class='sk-child sk-bounce1'></div><div class='sk-child sk-bounce2'></div><div class='sk-child sk-bounce'></div></div><p class='loading-message'>Mohon tunggu...</p>"
+ 		 });
+ 		 loading_screen.finish();
+ 	</script>
 		<!-- bootstrap -->
 		<script src="js/bootstrap.min.js"></script>
 		<!-- isotope -->
 		<script src="js/isotope.js"></script>
 		<!-- images loaded -->
    	<script src="js/imagesloaded.min.js"></script>
-   		<!-- wow -->
-		<script src="js/wow.min.js"></script>
 		<!-- jquery flexslider -->
 		<script src="js/jquery.flexslider.js"></script>
 		<!-- custom -->
 		<script src="js/custom.js"></script>
 		<!-- fotorama -->
 		<script src='js/fotorama.js'></script>
+		<!--paralax-->
+ 	 <script src="js/parallax.min.js"></script>
+ 	 <script>
+ 		 function callparallax(){
+ 			 $('.parallax-window').parallax({
+ 				imageSrc: './images/rumahmakan.jpg',
+ 				naturalWidth: 900,
+ 				naturalHeight: 600
+ 			});
+ 		}
+
+ 		callparallax();
+ 	 </script>
 	</body>
 </html>

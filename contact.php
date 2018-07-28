@@ -1,9 +1,29 @@
+<?php include_once "config.php"; ?>
+<?php
+	$email = "";
+	$bbm = "";
+	$desc_loc = "";
+	$goog_map = "";
+
+	$ssql = "SELECT * FROM info WHERE id = '1'";
+	$query = mysqli_query($con, $ssql);
+
+	while($record = mysqli_fetch_array($query)){
+		$email = $record['email'];
+		$bbm = $record['bbm'];
+		$desc_loc = $record['deskripsi_lokasi'];
+		$goog_map = $record['map'];
+	}
+
+	$ssql_con = "SELECT * FROM contact";
+	$query_con = mysqli_query($con, $ssql_con);
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
 
-		<title>Warung PandanSari</title>
+		<title>Warung Pandansari</title>
 <!--
 
 Template 2081 Solution
@@ -16,7 +36,7 @@ http://www.tooplate.com/view/2081-solution
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="keywords" content="">
 		<meta name="description" content="">
-
+		<link href='images/icon.ico' rel='icon' type='image/x-icon'/>
 		<!-- animate -->
 		<link rel="stylesheet" href="css/animate.min.css">
 		<!-- bootstrap -->
@@ -24,7 +44,8 @@ http://www.tooplate.com/view/2081-solution
 		<!-- font-awesome -->
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 		<!-- google font -->
-		<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+		<!--<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">-->
+		<link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
 		<!-- custom -->
 		<link rel="stylesheet" href="css/style.css">
@@ -33,6 +54,8 @@ http://www.tooplate.com/view/2081-solution
 		<link rel="stylesheet" href="css/slick-theme.css">
 		<!-- DataTables -->
 	  <link rel="stylesheet" href="css/dataTables.bootstrap.css">
+		<!--pleasewait-->
+		<link href="css/please-wait.css" rel="stylesheet">
 
 	</head>
 	<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
@@ -53,7 +76,7 @@ http://www.tooplate.com/view/2081-solution
 						<li><a href="index.php">PANDANSARI</a></li>
 						<li><a href="service.php">LAYANAN</a></li>
 						<li><a href="menu.php">MENU</a></li>
-						<li><a href="#">FASILITAS</a></li>
+						<li><a href="facility.php">FASILITAS</a></li>
 						<li><a href="#" class="nav-active">HUBUNGI</a></li>
 						<li><a href="galeri.php">GALERI</a></li>
 					</ul>
@@ -61,6 +84,12 @@ http://www.tooplate.com/view/2081-solution
 			</div>
 		</div>
 		<!-- end navigation -->
+
+		<!--top content-->
+			<div class="parallax-window">
+					<div class="title-page"><h3>Tanyakan Sesuatu</h3></div>
+			</div>
+		<!--end top content-->
 
 		<div class="main-content">
 
@@ -71,20 +100,19 @@ http://www.tooplate.com/view/2081-solution
       			 <div class="col-md-6 col-sm-6">
       				 <h3><span>K</span>ontak</h3>
       				 <p class="sub-tit">Nomor telpon:</p>
-      				 <p><i class="fa fa-phone"></i> 085-106-790-101 (Warung Pandansari)</p>
-      				 <p><i class="fa fa-phone"></i> 081-23-386-385 (H.Ilham Robby)</p>
-      				 <p><i class="fa fa-phone"></i> 081-233-107-107 (Bu Hari)</p>
-      				 <p><i class="fa fa-phone"></i> 081-333-293-837 (Bu Amah)</p>
+							 <?php while($record = mysqli_fetch_array($query_con)){ ?>
+								 <p><i class="fa fa-phone"></i> <?php $nama_con = $record['nama']; echo $record['no_telp']." "."($nama_con)";?></p>
+							 <?php }?>
       				 <p class="sub-tit">Alamat Email:</p>
-      				 <p><i class="fa fa-envelope"></i> agustine.indah28@gmail.com</p>
+      				 <p><i class="fa fa-envelope"></i> <?php echo $email; ?></p>
       				 <p class="sub-tit">BBM:</p>
-      				 <p><i class="fa fa-comment"></i> 53DA71F3</p>
+      				 <p><i class="fa fa-comment"></i> <?php echo $bbm; ?></p>
       				 <p class="sub-tit">Lokasi:</p>
-      				 <p><i class="fa fa-map-marker"></i> Kami berlokasi di jalan utama desa Pandesari kecamatan Pujon, dekat dengan Kota Wisata Batu, sehingga kami juga dekat dengan berbagai tempat wisata seperti Jatim Park, Museum Angkut, Museum Satwa, Batu Secret Zoo, Coban Rondo, Paralayang, Pemandian Songgoriti, Pemandian Dewi Sri, Selecta, Agrowisata, BNS, Museum Tubuh, Alun-alun Batu Anda dapat mengunjungi kami di Jl. Brigjend Abdul Manan W. no. 70 Pandesari, Pujon, Malang, Jawa Timur</p>
+      				 <p><i class="fa fa-map-marker"></i> <?php echo $desc_loc; ?></p>
       			 </div>
       			 <div class="col-md-6 col-sm-6">
       				 <h3><span>M</span>ap</h3>
-      				 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.4108657143347!2d112.48305121415522!3d-7.851995694342512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78877c7b0fd235%3A0xf06eddb69258c2d6!2sRumah+Makan+Pandansari!5e0!3m2!1sid!2sid!4v1479991819768" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+      				 <?php echo $goog_map; ?>
       			 </div>
       		 </div>
       	</div>
@@ -100,33 +128,57 @@ http://www.tooplate.com/view/2081-solution
 		</div>
 
 		<!-- start footer -->
+		<?php
+			$facebook = "";
+			$twitter = "";
+			$instagram = "";
+			$pinterest = "";
+			$google_plus = "";
+			$youtube = "";
+
+			$ssql = "SELECT * FROM info WHERE id = '1'";
+			$query = mysqli_query($con, $ssql);
+
+			while($record = mysqli_fetch_array($query)){
+				$facebook = $record['facebook'];
+				$twitter = $record['twitter'];
+				$instagram = $record['instagram'];
+				$pinterest = $record['pinterest'];
+				$google_plus = $record['google_plus'];
+				$youtube = $record['youtube'];
+			}
+		?>
 		<footer>
 			<div class="container">
-				<div class="row social-icon wow fadeInUp" data-wow-delay="0.9s">
-					<div class="col-md-12 col-sm-12">
-
+				<div class="row social-icon">
+					<div class="col-xs-2">
+						<a href="<?php echo $facebook; ?>" class="fa fa-facebook fa-2x"></a>
 					</div>
-					<div class="col-md-2 col-sm-2">
-						<a href="#" class="fa fa-facebook fa-2x"></a>
+					<div class="col-xs-2">
+						<a href="<?php echo $twitter; ?>" class="fa fa-twitter fa-2x"></a>
 					</div>
-					<div class="col-md-2 col-sm-2">
-						<a href="#" class="fa fa-twitter fa-2x"></a>
+					<div class="col-xs-2">
+						<a href="<?php echo $instagram; ?>" class="fa fa-instagram fa-2x"></a>
 					</div>
-					<div class="col-md-2 col-sm-2">
-						<a href="#" class="fa fa-instagram fa-2x"></a>
+					<div class="col-xs-2">
+						<a href="<?php echo $pinterest; ?>" class="fa fa-pinterest fa-2x"></a>
 					</div>
-					<div class="col-md-2 col-sm-2">
-						<a href="#" class="fa fa-pinterest fa-2x"></a>
+					<div class="col-xs-2">
+						<a href="<?php echo $google_plus; ?>" class="fa fa-google fa-2x"></a>
 					</div>
-					<div class="col-md-2 col-sm-2">
-						<a href="#" class="fa fa-google fa-2x"></a>
-					</div>
-					<div class="col-md-2 col-sm-2">
-						<a href="#" class="fa fa-youtube fa-2x"></a>
+					<div class="col-xs-2">
+						<a href="<?php echo $youtube; ?>" class="fa fa-youtube fa-2x"></a>
 					</div>
 				</div>
 				<div class="copyright">
-					<p>Copyright &copy; <span>Warung Pandansari</span></p>
+					<div class="row">
+						<div class="col-md-12">
+							<p>Copyright &copy; 2016 <span>Warung Pandansari</span></p>
+						</div>
+						<div class="col-md-12">
+							<p>Website by weeffee studio</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</footer>
@@ -134,18 +186,40 @@ http://www.tooplate.com/view/2081-solution
 
 		<!-- jQuery -->
 		<script src="js/jquery.min.js"></script>
+		<!--pleasewait-->
+		<script type="text/javascript" src="js/please-wait.min.js"></script>
+	 	<script type="text/javascript">
+
+		 	var loading_screen = pleaseWait({
+		  logo: "images/logo.png",
+		  backgroundColor: '#e74c3c',
+		  loadingHtml: "<div class='sk-three-bounce'><div class='sk-child sk-bounce1'></div><div class='sk-child sk-bounce2'></div><div class='sk-child sk-bounce'></div></div><p class='loading-message'>Mohon tunggu...</p>"
+			});
+			loading_screen.finish();
+	 </script>
 		<!-- bootstrap -->
 		<script src="js/bootstrap.min.js"></script>
 		<!-- isotope -->
 		<script src="js/isotope.js"></script>
 		<!-- images loaded -->
    	<script src="js/imagesloaded.min.js"></script>
-   		<!-- wow -->
-		<script src="js/wow.min.js"></script>
 		<!-- jquery flexslider -->
 		<script src="js/jquery.flexslider.js"></script>
 		<!-- custom -->
 		<script src="js/custom.js"></script>
     <!--slick-->
+		<!--parallax-->
+		<script src="js/parallax.min.js"></script>
+ 	 	<script>
+ 		 function callparallax(){
+ 			 $('.parallax-window').parallax({
+ 					imageSrc: './images/staff.jpg',
+ 					naturalWidth: 900,
+ 					naturalHeight: 600
+ 				});
+ 			}
+
+ 			callparallax();
+ 	 	</script>
   	</body>
 </html>
